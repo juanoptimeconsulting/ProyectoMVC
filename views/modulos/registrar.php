@@ -100,11 +100,34 @@
         <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#Password" data-match-error="Las Contraseñas no Coinciden" placeholder="Confirmar Contraseña" required>
         <div class="help-block with-errors"></div>
 
+
+
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>File</span>
+                    <input   id="fotoPaciente" name="fotoPaciente"type="file" multiple>
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                </div>
+            </div>
+
         <a class="waves-effect waves-light btn  "><i class="material-icons left">cloud</i>button</a>
     </form>
 
 
 </div>
+
+<?php
+
+
+$controlador = new mvcontroller();
+
+$controlador ->registroPersonaControlador();
+
+
+
+?>
 
 
 

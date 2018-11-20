@@ -43,18 +43,27 @@ class mvcontroller
 
         // ALMACENARLOS EN UNOS SOLO CON UN ARRAY
 
-        $datos = array("Nombre"=>$_POST["Nombre"],
+        $datosControlador = array("Nombre"=>$_POST["Nombre"],
            "Apellido"=> $_POST["Apellido"],
            "TipoDocumento"=> $_POST["TipoDocumento"],
             "Documento"=>$_POST["Documento"],
+            "Direccion"=>$_POST["Direccion"],
             "Email"=> $_POST["Email"],
            "Genero"=> $_POST["Genero"],
             "User"=>$_POST["User"],
-           "Password"=> $_POST["Password"]
+            "Estado"=>$_POST["Estado"],
+            "FotoPaciente"=>$_POST["FotoPaciente"],
+           "Password"=> $_POST["Password"]);
 
-    );
+              $respuestademodelo =  datos::registrousuarioModelo($datosControlador, "paciente");// traer los datos de la funcion que esta en la clase datos
 
-        $respuestademodelo =
+                   echo $respuestademodelo;
+
+
+
+
+
+
 
 
 
