@@ -26,14 +26,29 @@ class datos extends conexion {
     public static function registrousuarioModelo($datosRecibidos, $nombreTabla){
 
         //(:)operador de resolucion de ambitos, llegar una funcion de una clase heredada
-        //prepara una sentencia SQL para ser ejecutada por el metodo PDOstatement, previene inyecciones sql
+        //prepare() prepara una sentencia SQL para ser ejecutada por el metodo PDOstatement, previene inyecciones sql
 
 
-        
-  $stmt = conexion::conectar()->prepare("INSERT INTO $nombreTabla(Nombre, Apellido,Tipodocumento, Documento,Direccion, Email, Genero,User, Estado,Fotopaciente, password) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+   //Ahora enlazamos parametros
+  $stmt = conexion::conectar()->prepare("INSERT INTO $nombreTabla(Nombre, Apellido,
+Tipodocumento, Documento,Direccion, Email, Genero,User, Estado,Fotopaciente, password)
+ VALUES (NULL, :Nombre, :Apellido,Tipodocuemento, Documento, Direccion, Email, Genero, User, Estado, Fotopaciente, password)");
 
 
-  return $stmt;
+  //bindparam enlaza los paramtreos, vincula una variable PHP en datos, a un paramtro sustitucion con nombre o simbolo de sustitucion
+
+   //PARAM_STR: pdo parametro de tipo String
+
+   $stmt->bindParam(":Nombre",$datosRecibidos["Nombre"], PDO::PARAM_STR);
+        $stmt->bindParam(":Apellido",$datosRecibidos["Apellido"], PDO::PARAM_STR);
+        $stmt->bindParam(":Tipodocumento",$datosRecibidos["Tipodocumento"], PDO::PARAM_STR);
+        $stmt->bindParam(":Documento",$datosRecibidos["Documento"], PDO::PARAM_INT);
+        $stmt->bindParam(":Direccion",$datosRecibidos["Direccion"], PDO::PARAM_STR);
+        $stmt->bindParam(":Email",$datosRecibidos["Email"], PDO::PARAM_STR);
+        $stmt->bindParam(":Genero",$datosRecibidos["Genero"], PDO::PARAM_STR);
+        $stmt->bindParam(":User",$datosRecibidos["User"], PDO::PARAM_STR);
+        $stmt->bindParam(":Estado",$datosRecibidos["Estado"], PDO::PARAM_STR);
+        $stmt->bindParam(":FotoPaciente",$datosRecibidos["FotoPaciente"], PDO::PARAM_STR);
 
 
 

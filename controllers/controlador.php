@@ -41,7 +41,7 @@ class mvcontroller
     public function registroPersonaControlador(){
 
 
-        // ALMACENARLOS EN UNOS SOLO CON UN ARRAY
+        // ALMACENARLOS EN UNOS SOLO CON UN ARRAY lOS DATOS
 
         $datosControlador = array("Nombre"=>$_POST["Nombre"],
            "Apellido"=> $_POST["Apellido"],
