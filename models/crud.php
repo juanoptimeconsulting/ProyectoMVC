@@ -29,16 +29,16 @@ class datos extends conexion {
         //prepare() prepara una sentencia SQL para ser ejecutada por el metodo PDOstatement, previene inyecciones sql
 
     //Ahora enlazamos parametros
-    $stmt = conexion::conectar()->prepare("INSERT INTO $nombreTabla(id, Nombre, Apellido,Tipodocumento, Documento,Direccion, Email, Genero,
-Users, Estado, FotoPaciente,Pass)VALUES (NULL, :Nombre, :Apellido,:Tipodocumento,:Documento,:Direccion,:Email,:Genero, :Users,:Estado,:FotoPaciente,:Pass)");
+    $stmt = conexion::conectar()->prepare("INSERT INTO $nombreTabla(id, Nombres, Apellidos,Tipodocumento, Documento,Direccion, Email, Genero,
+Users, Estado, FotoPaciente,Pass)VALUES (NULL, :Nombres, :Apellidos,:Tipodocumento,:Documento,:Direccion,:Email,:Genero, :Users,:Estado,:FotoPaciente,:Pass)");
 
 
     //bindparam enlaza los paramtreos, vincula una variable PHP en datos, a un paramtro sustitucion con nombre o simbolo de sustitucion
 
     //PARAM_STR: pdo parametro de tipo String
         try{
-    $stmt->bindParam(":Nombre",$datosRecibidos["Nombre"], PDO::PARAM_STR);
-    $stmt->bindParam(":Apellido",$datosRecibidos["Apellido"], PDO::PARAM_STR);
+    $stmt->bindParam(":Nombres",$datosRecibidos["Nombres"], PDO::PARAM_STR);
+    $stmt->bindParam(":Apellidos",$datosRecibidos["Apellidos"], PDO::PARAM_STR);
     $stmt->bindParam(":Tipodocumento",$datosRecibidos["Tipodocumento"], PDO::PARAM_STR);
     $stmt->bindParam(":Documento",$datosRecibidos["Documento"], PDO::PARAM_INT);
     $stmt->bindParam(":Direccion",$datosRecibidos["Direccion"], PDO::PARAM_STR);
@@ -54,7 +54,7 @@ Users, Estado, FotoPaciente,Pass)VALUES (NULL, :Nombre, :Apellido,:Tipodocumento
 
          return "success";
      }else{
-         return "no se registro";
+         return "no se registró";
      }
 
 

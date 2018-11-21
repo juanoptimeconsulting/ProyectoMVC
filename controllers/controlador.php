@@ -55,17 +55,18 @@ try{
             header("Location: ../views/modulos/registrar.php?respuesta=error&Mensaje=".$resultUpload["Error"]);
         }*/
         // ALMACENARLOS EN UNOS SOLO CON UN ARRAY lOS DATOS
-        $datosControlador = array("Nombre"=>"juan",
-            "Apellido"=> "juan",
+        $datosControlador =
+            array("Nombres"=>"juan",
+            "Apellidos"=> "juan",
             "TipoDocumento"=>"T.I",
-            "Documento"=>123123,
-            "Direccion"=>"123123",
-           "Email"=> "asdas@asdas",
+            "Documento"=>12312334,
+            "Direccion"=>"123123343434",
+           "Email"=> "asdas@hotmail.com",
           "Genero"=> "Masculino",
            "Users"=>"qeqwe",
            "Estado" => "Activo",
-         "FotoPaciente"=>"sadasd.png",
-            "Edad"=>12);
+         "FotoPaciente"=>"19-Apr-07-Soccer_Ball_48px.png",
+            "Pass"=>"123123123");
 
 
 
