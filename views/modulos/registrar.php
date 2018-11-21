@@ -63,10 +63,10 @@
 
 <?php
 
-
+/*
 $controlador = new mvcontroller();
 
-$controlador ->registroPersonaControlador();
+$controlador ->registroPersonaControlador();*/
 
 
 
