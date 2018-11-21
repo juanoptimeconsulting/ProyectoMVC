@@ -29,32 +29,34 @@ class datos extends conexion {
         //prepare() prepara una sentencia SQL para ser ejecutada por el metodo PDOstatement, previene inyecciones sql
 
     //Ahora enlazamos parametros
-    $stmt = conexion::conectar()->prepare("INSERT INTO $nombreTabla(id, Nombres, Apellidos,Tipodocumento, Documento,Direccion, Email, Genero,
-Users, Estado, FotoPaciente,Pass)VALUES (NULL, :Nombres, :Apellidos,:Tipodocumento,:Documento,:Direccion,:Email,:Genero, :Users,:Estado,:FotoPaciente,:Pass)");
+    $stmt = conexion::conectar()->prepare("INSERT INTO $nombreTabla
+(idPaciente, Nombres, Apellidos,TipoDocumento, Documento,Direccion,
+ Email, Genero,User, Password,FotoPaciente, Estado)VALUES (NULL, :Nombres, :Apellidos,:TipoDocumento,:Documento,:Direccion,:Email,:Genero, :User,:Password,:FotoPaciente,:Estado)");
 
 
 
     //PARAM_STR: pdo parametro de tipo String
         try{
             //bindparam enlaza los paramtreos, vincula una variable PHP en datos, a un paramtro sustitucion con nombre o simbolo de sustitucion
-            $stmt->bindParam(":Nombres",$datosRecibidos["Nombres"], PDO::PARAM_STR);
+    $stmt->bindParam(":Nombres",$datosRecibidos["Nombres"], PDO::PARAM_STR);
     $stmt->bindParam(":Apellidos",$datosRecibidos["Apellidos"], PDO::PARAM_STR);
-    $stmt->bindParam(":Tipodocumento",$datosRecibidos["Tipodocumento"], PDO::PARAM_STR);
+    $stmt->bindParam(":TipoDocumento",$datosRecibidos["TipoDocumento"], PDO::PARAM_STR);
     $stmt->bindParam(":Documento",$datosRecibidos["Documento"], PDO::PARAM_INT);
     $stmt->bindParam(":Direccion",$datosRecibidos["Direccion"], PDO::PARAM_STR);
     $stmt->bindParam(":Email",$datosRecibidos["Email"], PDO::PARAM_STR);
     $stmt->bindParam(":Genero",$datosRecibidos["Genero"], PDO::PARAM_STR);
-    $stmt->bindParam(":Users",$datosRecibidos["Users"], PDO::PARAM_STR);
-    $stmt->bindParam(":Estado",$datosRecibidos["Estado"], PDO::PARAM_STR);
+    $stmt->bindParam(":User",$datosRecibidos["User"], PDO::PARAM_STR);
+    $stmt->bindParam(":Password",$datosRecibidos["Password"], PDO::PARAM_STR);
     $stmt->bindParam(":FotoPaciente",$datosRecibidos["FotoPaciente"], PDO::PARAM_STR);
-    $stmt->bindParam(":Pass",$datosRecibidos["Pass"], PDO::PARAM_STR);
+    $stmt->bindParam(":Estado",$datosRecibidos["Estado"], PDO::PARAM_STR);
+
 
     //valor bolean
      if($stmt->execute()){
 
          return "success";
      }else{
-         return "no se registró";
+         return  var_dump($stmt)."<strong>no se registró<strong>";
      }
 
 

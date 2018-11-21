@@ -11,10 +11,10 @@ class conexion{
 
 
 
-    static public  function  conectar(){
+     public static  function  conectar(){
 
 
-        $link = new PDO("mysql:host=localhost;dbname=bdprueba","root","");
+        $link = new PDO("mysql:host=localhost;dbname=odontologos","root","");
 
 
 

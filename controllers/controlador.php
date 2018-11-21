@@ -57,22 +57,22 @@ try{
         // ALMACENARLOS EN UNOS SOLO CON UN ARRAY lOS DATOS
         $datosControlador =
             array("Nombres"=>"juan",
-            "Apellidos"=> "juan",
-            "TipoDocumento"=>"T.I",
-            "Documento"=>12312334,
-            "Direccion"=>"123123343434",
-           "Email"=> "asdas@hotmail.com",
-          "Genero"=> "Masculino",
-           "Users"=>"qeqwe",
-           "Estado" => "Activo",
-         "FotoPaciente"=>"19-Apr-07-Soccer_Ball_48px.png",
-            "Pass"=>"123123123");
+            "Apellidos"=> "juanddsddddd",
+            "TipoDocumento"=> "T.I",
+            "Documento" => 12312334,
+            "Direccion"=> "dfdf",
+            "Email"=> "sadasd",
+            "Genero"=> "Masculino",
+            "User"=> "asdasdffddd",
+            "Password"=>"123123123",
+            "FotoPaciente"=>"19-Apr-07-Soccer_Ball_48px.png",
+            "Estado" => "Activo");
 
 
 
-        $respuestademodelo =  datos::registrousuarioModelo($datosControlador, "paciente");// traer los datos de la funcion que esta en la clase datos
+        $reinstatement =  datos::registrousuarioModelo($datosControlador, "paciente");// traer los datos de la funcion que esta en la clase datos
 
-        echo $respuestademodelo;
+        echo $reinstatement;
 
     }else{
         echo "error";
