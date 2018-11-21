@@ -33,20 +33,20 @@ class datos extends conexion {
 Users, Estado, FotoPaciente,Pass)VALUES (NULL, :Nombres, :Apellidos,:Tipodocumento,:Documento,:Direccion,:Email,:Genero, :Users,:Estado,:FotoPaciente,:Pass)");
 
 
-    //bindparam enlaza los paramtreos, vincula una variable PHP en datos, a un paramtro sustitucion con nombre o simbolo de sustitucion
 
     //PARAM_STR: pdo parametro de tipo String
         try{
-    $stmt->bindParam(":Nombres",$datosRecibidos["Nombres"], PDO::PARAM_STR);
+            //bindparam enlaza los paramtreos, vincula una variable PHP en datos, a un paramtro sustitucion con nombre o simbolo de sustitucion
+            $stmt->bindParam(":Nombres",$datosRecibidos["Nombres"], PDO::PARAM_STR);
     $stmt->bindParam(":Apellidos",$datosRecibidos["Apellidos"], PDO::PARAM_STR);
     $stmt->bindParam(":Tipodocumento",$datosRecibidos["Tipodocumento"], PDO::PARAM_STR);
     $stmt->bindParam(":Documento",$datosRecibidos["Documento"], PDO::PARAM_INT);
     $stmt->bindParam(":Direccion",$datosRecibidos["Direccion"], PDO::PARAM_STR);
     $stmt->bindParam(":Email",$datosRecibidos["Email"], PDO::PARAM_STR);
-   $stmt->bindParam(":Genero",$datosRecibidos["Genero"], PDO::PARAM_STR);
+    $stmt->bindParam(":Genero",$datosRecibidos["Genero"], PDO::PARAM_STR);
     $stmt->bindParam(":Users",$datosRecibidos["Users"], PDO::PARAM_STR);
     $stmt->bindParam(":Estado",$datosRecibidos["Estado"], PDO::PARAM_STR);
-   $stmt->bindParam(":FotoPaciente",$datosRecibidos["FotoPaciente"], PDO::PARAM_STR);
+    $stmt->bindParam(":FotoPaciente",$datosRecibidos["FotoPaciente"], PDO::PARAM_STR);
     $stmt->bindParam(":Pass",$datosRecibidos["Pass"], PDO::PARAM_STR);
 
     //valor bolean
