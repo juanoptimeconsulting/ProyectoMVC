@@ -30,8 +30,8 @@ class datos extends conexion {
 
     //Ahora enlazamos parametros
     $stmt = conexion::conectar()->prepare("INSERT INTO $nombreTabla
-(idPaciente, Nombres, Apellidos,TipoDocumento, Documento,Direccion,
- Email, Genero,User, Password,FotoPaciente, Estado)VALUES (NULL, :Nombres, :Apellidos,:TipoDocumento,:Documento,:Direccion,:Email,:Genero, :User,:Password,:FotoPaciente,:Estado)");
+(idPaciente, Nombres, Apellidos,TipoDocumento, Documento, Direccion,
+ Email, Genero,User, Password, FotoPaciente, Estado)VALUES (NULL, :Nombres, :Apellidos,:TipoDocumento,:Documento,:Direccion,:Email,:Genero, :User,:Password,:FotoPaciente,:Estado)");
 
 
 
@@ -66,7 +66,7 @@ class datos extends conexion {
 
 
 
-}catch (Exception $e){
+}catch (PDOException $e){
      echo "errr de registro".$e;
 }
 

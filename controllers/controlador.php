@@ -56,7 +56,8 @@ try{
         }*/
         // ALMACENARLOS EN UNOS SOLO CON UN ARRAY lOS DATOS
         $datosControlador =
-            array("Nombres"=>"juan",
+            array(
+            "Nombres"=>"juan",
             "Apellidos"=> "juanddsddddd",
             "TipoDocumento"=> "T.I",
             "Documento" => 12312334,
@@ -65,13 +66,13 @@ try{
             "Genero"=> "Masculino",
             "User"=> "asdasdffddd",
             "Password"=>"123123123",
-            "FotoPaciente"=>"19-Apr-07-Soccer_Ball_48px.png",
+            "FotoPaciente"=>"asdasdasd.png",
             "Estado" => "Activo");
 
 
 
         $reinstatement =  datos::registrousuarioModelo($datosControlador, "paciente");// traer los datos de la funcion que esta en la clase datos
-
+        var_dump($reinstatement);
         echo $reinstatement;
 
     }else{
