@@ -57,19 +57,19 @@ try{
         // ALMACENARLOS EN UNOS SOLO CON UN ARRAY lOS DATOS
         $datosControlador = array("Nombre"=>"juan",
             "Apellido"=> "juan",
-            //"TipoDocumento"=>"juan",
-            //"Documento"=>"1111",
-         //   "Direccion"=>"123123",
-          //  "Email"=> "asdas@asdas",
-           // "Genero"=> "asd",
-          //  "Users"=>"qeqwe",
-          //  "Estado" => "Activo",
-            //"FotoPaciente"=>"sadasd.png",
+            "TipoDocumento"=>"juan",
+            "Documento"=>123123,
+            "Direccion"=>"123123",
+           "Email"=> "asdas@asdas",
+          "Genero"=> "asd",
+           "Users"=>"qeqwe",
+           "Estado" => "Activo",
+         "FotoPaciente"=>"sadasd.png",
             "Edad"=>12);
 
 
 
-        $respuestademodelo =  datos::registrousuarioModelo($datosControlador, "persona");// traer los datos de la funcion que esta en la clase datos
+        $respuestademodelo =  datos::registrousuarioModelo($datosControlador, "paciente");// traer los datos de la funcion que esta en la clase datos
 
         echo $respuestademodelo;
 
