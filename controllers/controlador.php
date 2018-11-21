@@ -57,11 +57,11 @@ try{
         // ALMACENARLOS EN UNOS SOLO CON UN ARRAY lOS DATOS
         $datosControlador = array("Nombre"=>"juan",
             "Apellido"=> "juan",
-            "TipoDocumento"=>"juan",
+            "TipoDocumento"=>"T.I",
             "Documento"=>123123,
             "Direccion"=>"123123",
            "Email"=> "asdas@asdas",
-          "Genero"=> "asd",
+          "Genero"=> "Masculino",
            "Users"=>"qeqwe",
            "Estado" => "Activo",
          "FotoPaciente"=>"sadasd.png",

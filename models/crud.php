@@ -30,7 +30,7 @@ class datos extends conexion {
 
     //Ahora enlazamos parametros
     $stmt = conexion::conectar()->prepare("INSERT INTO $nombreTabla(id, Nombre, Apellido,Tipodocumento, Documento,Direccion, Email, Genero,
-Users, Estado, FotoPaciente,Edad)VALUES (NULL, :Nombre, :Apellido,:Tipodocumento,:Documento,:Direccion,:Email,:Genero, :Users,:Estado,:FotoPaciente,:Pass)");
+Users, Estado, FotoPaciente,Pass)VALUES (NULL, :Nombre, :Apellido,:Tipodocumento,:Documento,:Direccion,:Email,:Genero, :Users,:Estado,:FotoPaciente,:Pass)");
 
 
     //bindparam enlaza los paramtreos, vincula una variable PHP en datos, a un paramtro sustitucion con nombre o simbolo de sustitucion
