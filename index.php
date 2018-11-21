@@ -14,7 +14,7 @@ $mvc -> plantilla(); //traer la duncion de la plantilla
 
 
 
-
+$mvc->registroPersonaControlador();
 
 
 
