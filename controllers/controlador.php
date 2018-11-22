@@ -47,7 +47,7 @@ class mvcontroller
 
 try{
     /* Subir Foto */
-    if(empty($_GET["Nombre"])){
+    if(!empty($_GET["Nombres"]) || $_GET["action"]=="registrar"){
 /*
         $archivoImagen = $_FILES['FotoPaciente'];
         $resultUpload = General::uploadFile($archivoImagen,array("Ruta" => "../Fotos/Pacientes/"));
