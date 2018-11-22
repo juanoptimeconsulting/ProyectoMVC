@@ -65,25 +65,32 @@
 
 $controlador = new mvcontroller();
 
-if($_GET["action"]=="registrar"){
+
+if(isset($_GET["action"])){
+    if($_GET["action"]=="registrar" ){
+
+        $controlador ->registroPersonaControlador();
+
+
+    }elseif ($_GET["action"]=="echo"){
+        echo "<strong>REGISTRO EXITOSO!</strong>";
+
+    }
+    /*
+    $controlador = new mvcontroller();
 
     $controlador ->registroPersonaControlador();
 
+    if($_GET["action"]){
 
-}
-/*
-$controlador = new mvcontroller();
+        if($_GET["action"]=="echo"){
+            echo  "<h1> Registro logrado!</h1>";
 
-$controlador ->registroPersonaControlador();
-
-if($_GET["action"]){
-
-    if($_GET["action"]=="echo"){
-        echo  "<h1> Registro logrado!</h1>";
-
+        }
     }
+    */
 }
-*/
+
 ?>
 
 

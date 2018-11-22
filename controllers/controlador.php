@@ -78,6 +78,12 @@ try{
         echo $reinstatement;
 
 
+        if($reinstatement=="succes"){
+
+            header("location:index.php?action=echo");
+
+        }
+
 
     }else{
         echo "error";
