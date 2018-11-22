@@ -16,7 +16,7 @@
         </ul>
 
         <ul class="right hide-on-med-and-down">
-            <!--variable get = ? y nombre de la variable en esta caso es action y para donde dirigirse-->
+            <!--variable get = ? y nombre de la variable en esta caso es registrar-->
             <li><a href="index.php?action=registrar">Registrar</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">

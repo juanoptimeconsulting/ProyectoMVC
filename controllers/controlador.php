@@ -6,6 +6,10 @@
  * Time: 9:45 AM
  */
 
+include_once "models/General.php";
+
+
+
 
 class mvcontroller
 {
@@ -38,35 +42,73 @@ class mvcontroller
 
 
     //REGISTRO DE PERSONA
-    public function registroPersonaControlador(){
+    public static function registroPersonaControlador(){
 
 
-        // ALMACENARLOS EN UNOS SOLO CON UN ARRAY
+try{
+    /* Subir Foto */
+    if(empty($_GET["Nombre"])){
+/*
+        $archivoImagen = $_FILES['FotoPaciente'];
+        $resultUpload = General::uploadFile($archivoImagen,array("Ruta" => "../Fotos/Pacientes/"));
+        if ($resultUpload["Result"] == true){
+            $arrayPaciente['Foto'] = $resultUpload["Ruta"];
+        }else{
+            header("Location: ../views/modulos/registrar.php?respuesta=error&Mensaje=".$resultUpload["Error"]);
+        }*/
+        // ALMACENARLOS EN UNOS SOLO CON UN ARRAY lOS DATOS
+        $datosControlador =
+            array(
+            "Nombres"=>"juan",
+            "Apellidos"=> "juanddsddddd",
+            "TipoDocumento"=> "T.I",
+            "Documento" => 12312334,
+            "Direccion"=> "dfdf",
+            "Email"=> "sadasd",
+            "Genero"=> "Masculino",
+            "User"=> "asdasdffddd",
+            "Password"=>"123123123",
+            "FotoPaciente"=>"asdasdasd.png",
+            "Estado" => "Activo");
 
-        $datos = array("Nombre"=>$_POST["Nombre"],
-           "Apellido"=> $_POST["Apellido"],
-           "TipoDocumento"=> $_POST["TipoDocumento"],
-            "Documento"=>$_POST["Documento"],
-            "Email"=> $_POST["Email"],
-           "Genero"=> $_POST["Genero"],
-            "User"=>$_POST["User"],
-           "Password"=> $_POST["Password"]
 
-    );
 
-        $respuestademodelo =
+        $reinstatement =  datos::registrousuarioModelo($datosControlador, "paciente");// traer los datos de la funcion que esta en la clase datos
+      /*  var_dump($reinstatement);*/
+        echo $reinstatement;
 
 
 
-
-
-
-
-
-
-
-
+    }else{
+        echo "error";
     }
+
+
+}catch (Exception $ex){
+    echo "error de registro controler".$ex;
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 

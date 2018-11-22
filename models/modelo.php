@@ -19,6 +19,9 @@ class enlacesPaginas{
                 $modulo = "views/modulos/".$enlacesrecibidos.".php";
 
 
+            }else if($enlacesrecibidos=="echo"){
+
+                $modulo = "views/modulos/registrar.php";
             }else {
                 $modulo = "views/modulos/respuestaerror.php";
 
