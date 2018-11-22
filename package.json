@@ -1,0 +1,29 @@
+{
+  "name": "proyectomvc",
+  "version": "1.0.0",
+  "description": "este es una prueba para utilizar browserify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify app.js -o bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanoptimeconsulting/ProyectoMVC.git"
+  },
+  "keywords": [
+    "juanmvc"
+  ],
+  "author": "juan pablo diaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanoptimeconsulting/ProyectoMVC/issues"
+  },
+  "homepage": "https://github.com/juanoptimeconsulting/ProyectoMVC#readme",
+  "devDependencies": {
+    "browserify": "^16.2.3"
+  },
+  "dependencies": {
+    "sweetalert": "^2.1.2"
+  }
+}

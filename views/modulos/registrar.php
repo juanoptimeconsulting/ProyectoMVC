@@ -10,9 +10,13 @@
 
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Parallax Template - Materialize</title>
@@ -35,6 +39,25 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="views/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="views/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+    <script>
+
+
+
+        function llamar(){
+            swal(
+                {
+                    title: 'Error!',
+                    text: 'REGISTRADO'+msg,
+                    type: 'error',
+                    confirmButtonColor: '#e81a2d',
+                    timer: 5000
+                }
+            );
+
+        }
+
+    </script>
 </head>
 <body>
 
@@ -42,43 +65,73 @@
 
 
     <!--metodo POST para enviar datos de manera interna"-->
-    <form  method="POST"  class="col s12">
+    <form  method="post"  class="col s12">
 
 
-                <input name="Nombres" id="first_name" type="text" class="validate">
+                <input   name="Nombres" id="first_name" type="text" required class="validate">
 
 
-        <input   name="Apellidos" id="last_name" type="text" class="validate">
-
-
-
-        <input  name="TipoDocumento" id="last_name" type="text" class="validates">
-
-        <input name="Documento" id="first_name" type="number" class="validate">
-
-
-        <input   name="Direccion" id="last_name" type="text" class="validate">
+        <input   name="Apellidos" id="last_name" type="text" required class="validate">
 
 
 
-        <input  name="Email" id="last_name" type="text" class="validates">
+        <input  name="TipoDocumento" id="last_name" type="text" required class="validates">
+
+        <input name="Documento" id="first_name" type="number" required class="validate">
 
 
-        <input name="Genero" id="first_name" type="text" class="validate">
-
-
-        <input   name="User" id="last_name" type="text" class="validate">
-
-
-
-        <input  name="Password" id="last_name" type="text" class="validates">
-
-        <input name="FotoPaciente" id="first_name" type="text" class="validate">
+        <input   name="Direccion" id="last_name" type="text" required class="validate">
 
 
 
+        <input  name="Email" id="last_name" type="text"  required class="validates">
 
-        <button type="submit" class="btn btn-default">Enviar</button>
+
+        <input name="Genero" id="first_name" type="text" required class="validate">
+
+
+        <input   name="User" id="last_name" type="text" required class="validate">
+
+
+
+        <input  name="Password" id="last_name" type="text" required class="validates">
+
+        <input name="FotoPaciente" id="first_name" type="text" required class="validate">
+
+
+
+
+        <button type="submit"  class="btn btn-default">Enviar</button>
+
+<?php if($_GET["action"]=="echo"){?>
+    <div class="row">
+        <div class="col s21 m12">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text center-align">
+                    <span class="card-title center-align">Card Title</span>
+                    <p>Usuario registrado con exito!</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+        <?php  }else if($_GET["action"]=="error"){?>
+
+
+        <div class="row">
+            <div class="col s12 m5">
+                <div class="card-panel teal">
+        <span class="white-text">NO SE REGISTRO!
+        </span>
+                </div>
+            </div>
+        </div>
+
+        <?php } ?>
+
+
+
 
 
     </form>
@@ -97,7 +150,7 @@ if(isset($_GET["action"])){
         $controlador ->registroPersonaControlador();
 
 
-    }elseif ($_GET["action"]=="echo"){
+    }/*elseif ($_GET["action"]=="echo"){
         echo "<strong>REGISTRO EXITOSO!</strong>";
 
     }

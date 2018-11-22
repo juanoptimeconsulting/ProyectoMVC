@@ -46,8 +46,14 @@ class mvcontroller
 
 
 try{
-    /* Subir Foto */
-    if(!empty($_GET["Nombres"]) || $_GET["action"]=="registrar"){
+
+    if($_POST){
+
+
+
+    if(isset($_GET["Nombres"]) || $_GET["action"]=="registrar"){
+
+        /* Subir Foto */
 /*
         $archivoImagen = $_FILES['FotoPaciente'];
         $resultUpload = General::uploadFile($archivoImagen,array("Ruta" => "../Fotos/Pacientes/"));
@@ -56,21 +62,23 @@ try{
         }else{
             header("Location: ../views/modulos/registrar.php?respuesta=error&Mensaje=".$resultUpload["Error"]);
         }*/
+
+
+
         // ALMACENARLOS EN UNOS SOLO CON UN ARRAY lOS DATOS
         $datosControlador =
             array(
-            "Nombres"=>"juan",
-            "Apellidos"=> "juanddsddddd",
-            "TipoDocumento"=> "T.I",
-            "Documento" => 12312334,
-            "Direccion"=> "dfdf",
-            "Email"=> "sadasd",
-            "Genero"=> "Masculino",
-            "User"=> "asdasdffddd",
-            "Password"=>"123123123",
-            "FotoPaciente"=>"asdasdasd.png",
-            "Estado" => "Activo");
-
+                "Nombres"=>$_POST["Nombres"],
+                "Apellidos"=> $_POST["Apellidos"],
+                "TipoDocumento"=> $_POST["TipoDocumento"],
+                "Documento" => $_POST["Documento"],
+                "Direccion"=> $_POST["Direccion"],
+                "Email"=> $_POST["Email"],
+                "Genero"=> $_POST["Genero"],
+                "User"=> $_POST["User"],
+                "Password"=>$_POST["Password"],
+                "FotoPaciente"=>$_POST["FotoPaciente"],
+                "Estado" => "Activo");
 
 
         $reinstatement =  datos::registrousuarioModelo($datosControlador, "paciente");// traer los datos de la funcion que esta en la clase datos
@@ -82,14 +90,19 @@ try{
 
             header("location:index.php?action=echo");
 
+        }else{
+            header("location:index.php?action=error");
+
         }
 
 
-    }else{
-        echo "error";
     }
 
+    }else{
 
+        echo "----ERROR----";
+       // header("location:index.php?action=error");
+    }
 }catch (Exception $ex){
     echo "error de registro controler".$ex;
 }
@@ -97,6 +110,8 @@ try{
 
 
 }
+
+
 
 
 
