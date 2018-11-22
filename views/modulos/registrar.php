@@ -63,6 +63,14 @@
 
 <?php
 
+$controlador = new mvcontroller();
+
+if($_GET["action"]=="registrar"){
+
+    $controlador ->registroPersonaControlador();
+
+
+}
 /*
 $controlador = new mvcontroller();
 
