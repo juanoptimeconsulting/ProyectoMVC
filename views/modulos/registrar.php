@@ -45,15 +45,40 @@
     <form  method="POST"  class="col s12">
 
 
-                <input name="Nombre" id="first_name" type="text" class="validate">
+                <input name="Nombres" id="first_name" type="text" class="validate">
 
 
-                <input   name="Apellido" id="last_name" type="text" class="validate">
+        <input   name="Apellidos" id="last_name" type="text" class="validate">
 
 
 
-                <input  name="Edad" id="last_name" type="number" class="validates">
+        <input  name="TipoDocumento" id="last_name" type="text" class="validates">
 
+        <input name="Documento" id="first_name" type="number" class="validate">
+
+
+        <input   name="Direccion" id="last_name" type="text" class="validate">
+
+
+
+        <input  name="Email" id="last_name" type="text" class="validates">
+
+
+        <input name="Genero" id="first_name" type="text" class="validate">
+
+
+        <input   name="User" id="last_name" type="text" class="validate">
+
+
+
+        <input  name="Password" id="last_name" type="text" class="validates">
+
+        <input name="FotoPaciente" id="first_name" type="text" class="validate">
+
+
+
+
+        <button type="submit" class="btn btn-default">Enviar</button>
 
 
     </form>
