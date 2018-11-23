@@ -112,6 +112,7 @@ try{
 }
 
 
+
 //INGRESO DE USUARIO
 
 
@@ -119,7 +120,8 @@ try{
 
         if($_POST) {
 
-            if (isset($_GET["UserIngreso"]))  {
+
+            if (empty($_GET["PasswordIngreso"])  )  {
 
 // ALMACENARLOS EN UNOS SOLO CON UN ARRAY lOS DATOS
                 $datosControlador =
@@ -132,24 +134,32 @@ try{
 
 
 
-                if($recibe[0]== $_POST["UserIngreso"] && $recibe[1]== $_POST["PasswordIngreso"]){
+                if($recibe["User"]== $_POST["UserIngreso"] && $recibe["Password"]== $_POST["PasswordIngreso"]){
 
+
+                    //  var_dump( $recibe);
                     header("location:index.php?action=lista");
 
-                }else {
+                }else if($recibe==false) {
+
+                    // var_dump($recibe["Password"]);
                     header("location:index.php?action=erroringreso");
                 }
 
             }else{
-                echo "error";
+                echo "error2";
             }
 
 
+        }else{
+            echo "no entra get";
         }
 
 
-
     }
+
+
+
 
 
 
