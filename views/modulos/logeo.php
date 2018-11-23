@@ -13,7 +13,9 @@ $objetollegada = new mvcontroller();
 
 
 if(isset($_GET["action"])) {
-    if ($_GET["action"] == "logeo") {
+    //se coloco con action == erroringreso porque no volvia a validar al comeeter un error en el formulario y gracias este condicional ya entra y valida
+
+    if ($_GET["action"] == "logeo" || $_GET["action"]=="erroringreso") {
 
         $objetollegada->logeo();
 

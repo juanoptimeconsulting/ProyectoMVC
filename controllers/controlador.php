@@ -119,7 +119,7 @@ try{
 
         if($_POST) {
 
-            if (isset($_GET["UserIngreso"])  || $_GET["action"]== "logeo" )  {
+            if (isset($_GET["UserIngreso"]))  {
 
 // ALMACENARLOS EN UNOS SOLO CON UN ARRAY lOS DATOS
                 $datosControlador =
