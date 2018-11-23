@@ -113,7 +113,7 @@ try{
 
 
 
-//INGRESO DE USUARIO
+//LOGEO DE USUARIO
 
 
     public static  function logeo(){
@@ -137,7 +137,8 @@ try{
                 if($recibe["User"]== $_POST["UserIngreso"] && $recibe["Password"]== $_POST["PasswordIngreso"]){
 
 
-                    //  var_dump( $recibe);
+                session_start();//INICIAMOS SESION
+                    $_SESSION["validar"]= true;//VARIABLE SESION
                     header("location:index.php?action=lista");
 
                 }else if($recibe==false) {
@@ -147,7 +148,7 @@ try{
                 }
 
             }else{
-                echo "error2";
+                echo "error sin catch";
             }
 
 
@@ -158,8 +159,30 @@ try{
 
     }
 
+//LISTA DE USUARIOS:
+
+ public  static  function listaUsuariosController()
+ {
 
 
+     $respuesta = datos::ListaUsuarios("paciente");
+
+//var_dump($respuesta[5][6]);
+     //utilizamos for each, itera sobre arreglos y objetos
+     foreach ($respuesta as $dato => $item) {
+
+
+         echo '
+      
+          <tr>
+            <td>' . $item["Nombres"] . '</td>
+            <td>' . $item["Apellidos"] . '</td>
+            <td>' . $item["TipoDocumento"]  . '</td>
+          </tr>
+          
+    ';
+     }
+ }
 
 
 

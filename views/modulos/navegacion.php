@@ -26,6 +26,10 @@
             <li><a href="index.php?action=lista">Lista</a></li>
         </ul>
 
+        <ul class="right hide-on-med-and-down">
+            <li><a href="index.php?action=salir">Salir</a></li>
+        </ul>
+
 
         <ul id="nav-mobile" class="sidenav">
             <li><a href="#">1</a></li>

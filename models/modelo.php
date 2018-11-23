@@ -13,7 +13,7 @@ class enlacesPaginas{
 //CONTENIDOS MODULARES
    static  public   function  enlacespaginasmodels($enlacesrecibidos){
         try{
-            if($enlacesrecibidos == "lista" || $enlacesrecibidos == "logeo" || $enlacesrecibidos == "registrar"){
+            if($enlacesrecibidos == "lista" || $enlacesrecibidos == "logeo" || $enlacesrecibidos == "registrar" || $enlacesrecibidos=="salir"){
 
                 //direccion de la pagina que estoy retornando
                 $modulo = "views/modulos/".$enlacesrecibidos.".php";

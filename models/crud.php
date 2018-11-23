@@ -60,6 +60,7 @@ class datos extends conexion {
      }
 
 
+     $stmt->close();//finalizar conexion;
 
 
 
@@ -102,12 +103,28 @@ class datos extends conexion {
         }
 
 
+        $stmt->close();//finalizar conexion;
+
 
 
     }
 
 
 
+
+     public  static function ListaUsuarios($tabla){
+         $stmt = conexion::conectar()->prepare("SELECT * FROM $tabla");
+
+         if($stmt->execute()) {
+
+             //obtener todas las filas con le fetch All
+                          return $stmt->fetchAll();
+
+
+         }
+         $stmt->close();//finalizar conexion;
+
+     }
 
 
 
