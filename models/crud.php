@@ -80,6 +80,34 @@ class datos extends conexion {
 
 
 
+    public  static  function LogeoModelo($datosRecibidosLogeo, $nombreTabla){
+
+        //Ahora enlazamos parametros
+        $stmt = conexion::conectar()->prepare("SELECT  User, Password FROM $nombreTabla WHERE User = :User");
+
+
+        //bindParam relacion de parametros
+        $stmt->bindParam("User",$datosRecibidosLogeo["User"],PDO::PARAM_STR);
+
+        //valor bolean
+        if($stmt->execute()){
+
+
+        //metodo FETCH = obtiene una fila de un conjunto de resultados asiciados al objeto PDOstatement y devuelve un arrays
+            return $stmt->fetch();
+
+        }else{
+            return  var_dump($stmt)."<strong>no se registró<strong>";
+        }
+
+
+
+
+    }
+
+
+
+
 
 
 

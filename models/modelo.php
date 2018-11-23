@@ -22,6 +22,10 @@ class enlacesPaginas{
             }else if($enlacesrecibidos=="echo"){
 
                 $modulo = "views/modulos/registrar.php";
+
+            }else if($enlacesrecibidos=="erroringreso") {
+
+                $modulo = "views/modulos/logeo.php";
             }else {
                 $modulo = "views/modulos/respuestaerror.php";
 

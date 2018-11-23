@@ -7,7 +7,7 @@ require_once "models/crud.php";
 
 
 
-$mvc = new mvcontroller();//objeto de la calse mv controller
+$mvc = new mvcontroller();//objeto de la clase mv controller
 
 
 $mvc -> plantilla(); //traer la duncion de la plantilla

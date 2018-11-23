@@ -112,6 +112,48 @@ try{
 }
 
 
+//INGRESO DE USUARIO
+
+
+    public static  function logeo(){
+
+        if($_POST) {
+
+            if (isset($_GET["UserIngreso"])  || $_GET["action"]== "logeo" )  {
+
+// ALMACENARLOS EN UNOS SOLO CON UN ARRAY lOS DATOS
+                $datosControlador =
+                    array(
+                        "User" => $_POST["UserIngreso"],
+                        "Password" => $_POST["PasswordIngreso"]);
+
+                $recibe = datos::LogeoModelo($datosControlador, "paciente");
+
+
+
+
+                if($recibe[0]== $_POST["UserIngreso"] && $recibe[1]== $_POST["PasswordIngreso"]){
+
+                    header("location:index.php?action=lista");
+
+                }else {
+                    header("location:index.php?action=erroringreso");
+                }
+
+            }else{
+                echo "error";
+            }
+
+
+        }
+
+
+
+    }
+
+
+
+
 
 
 
